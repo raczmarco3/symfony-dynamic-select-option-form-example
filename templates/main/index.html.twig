@@ -1,0 +1,32 @@
+
+
+{% block body %}
+    {{ form(form) }}
+    {% if typeOfNumber is not empty and number is not empty %}
+        <div class="response">Type is: <b>{{typeOfNumber}}</b> and the Number is: <b>{{number}}</b></div>
+    {% endif %}
+{% endblock %}
+
+<script>
+        var html = '';        
+        function showData() {
+            var value = document.getElementById("type_form_typeofnumber").value;
+            var html = '';
+            if(value == 'even') {
+                html = '';
+                html = html + '<option value="0">0</option>';    
+                html = html + '<option value="2">2</option>';
+                html = html + '<option value="4">4</option>';
+                html = html + '<option value="6">6</option>';
+                html = html + '<option value="8">8</option>';     
+            } else  if(value == 'odd') {
+                html = '';
+                html = html + '<option value="1">1</option>';    
+                html = html + '<option value="3">3</option>';
+                html = html + '<option value="5">5</option>';
+                html = html + '<option value="7">7</option>';
+                html = html + '<option value="9">9</option>';  
+            }         
+            type_form_number.innerHTML = (html);
+        }
+</script>
